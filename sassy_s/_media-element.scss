@@ -1,0 +1,30 @@
+.media {
+	@include clearfix;
+	.media__media {
+		width: 30%;
+		float: left;
+		padding: 1rem;
+		@media screen and (max-width: 600px) {
+			width: 100%;
+			float: none;
+			padding: 0;
+		}
+	}
+	.media__content {
+		width: 70%;
+		float: right;
+		// padding: 1rem;
+		@media screen and (max-width: 600px) {
+			width: 100%;
+			float: none;
+		}
+	}
+	&.media--img-right {
+		.media__media {
+			float: right;
+		}
+		.media__content {
+			float: left;
+		}		
+	}
+}

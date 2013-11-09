@@ -1,0 +1,30 @@
+.cat-video {
+	float: left;
+	width: 100%;
+	@media screen and (min-width: 700px) {
+		width: 50%;
+	}
+	.entry-title {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+	&.hentry,
+	&.hentry:nth-child(2n-1) {
+		background: none;
+	}
+	&.hentry:nth-child(2n) {
+		clear: left;
+	}
+	iframe {
+		// width: 100%;
+	}
+}
+
+.entry-content.entry-content--video {
+	margin-top: 0;
+}
+
+.short-description {
+	font-size: 16px;
+	font-size: 1.6rem;
+}

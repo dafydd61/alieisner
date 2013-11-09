@@ -1,0 +1,42 @@
+.entry-title,
+.page-title,
+.entry-content > h1 {
+	font-size: 2.4rem;
+	color: $darkseablue;
+	text-shadow: darken($darkseablue, 20%);
+
+}
+
+.page-header {
+	padding: 20px;
+	padding: 2rem;
+}
+
+.entry-content {
+	font-size: 1.8rem;
+}
+
+#main > .page > .entry-header .entry-title,
+.page-title {
+	font-size: 30px;
+	font-size: 3rem;
+}
+
+.entry-meta {
+	font-family: $header-font;
+}
+
+footer.entry-meta span {
+	&:after {
+		content: '|';
+	}
+	&:last-child:after {
+		content: none;
+	}
+}
+
+.taxonomy-description {
+	font-size: 18px;
+	font-size: 1.8rem;
+	margin-top: $vspacing;
+}

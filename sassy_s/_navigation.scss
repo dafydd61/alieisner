@@ -1,0 +1,27 @@
+/* =Navigation
+----------------------------------------------- */
+
+.site-main [class*="navigation"] {
+	margin: 0 0 $vspacing;
+	overflow: hidden;
+	font-family: $header-font;
+	text-transform: uppercase;
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+
+}
+
+.post-navigation,
+.paging-navigation {
+	padding: 20px;
+	padding: 2rem;
+}

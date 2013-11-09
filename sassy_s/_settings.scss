@@ -1,0 +1,50 @@
+// Some common variables and mixins to get you started.
+// Variables allow you to re-use colors, sizes, and other values without repeating
+// yourself. This means that changes that should be small, such as tweaking the
+// coloring or the sizing, can be done in one place, not all over the stylesheet.
+
+$base-font: "museo-slab", sans-serif;
+$header-font: "brandon-grotesque", sans-serif; // you can refer to other variables
+
+/* Supported Values for $layout:
+  null | content-sidebar | content-sidebar-sidebar | sidebar-content | sidebar-content-sidebar | sidebar-sidebar-content
+*/
+$layout: null !default;
+$vspacing: 1.5em;
+
+$base-color: hsla(198, 80%, 10%, 1);
+$text-color: desaturate($base-color, 30%);
+
+$pink: hsl(341, 34%, 84%);
+$lightpink: hsl(10, 13%, 91%);
+$steelblue: hsl(189, 76%, 67%);
+$yellow: hsl(55, 63%, 96%);
+$seablue: hsl(188, 27%, 88%);
+$green: hsl(151, 96%, 88%);
+$orange: hsl(36, 73%, 95%);
+
+$pink: #F535AA;
+$pink: saturate(#dd99ae, 30%);
+$lightpink: #ecd0cd;
+$steelblue: #2c99ad;
+$yellow: #f6ea5a;
+$seablue: #addce6;
+// $darkseablue: darken(saturate($seablue, 30%), 40%);
+// $darkseablue: darken(saturate($seablue, 50%), 40%);
+$darkseablue: #4b8ec9;
+$darkseablue: #01a9db;
+$green: #0ddb76;
+$bright-orange: saturate(#edab4b, 0%);
+$orange: desaturate(orange, 40%);
+$red: desaturate(lighten(red, 10%), 20%);
+$blue: desaturate(lighten(blue, 20%), 40%);
+
+// Ali's test colours
+$ali-orange: #ff8000;
+$ali-light-blue: #a9e2f3;
+$ali-hot-pink: #fa58f4;
+$ali-turquoise: #58faf4;
+
+
+$link-color: darken($darkseablue, 10%);
+$link-color: #01a9db;

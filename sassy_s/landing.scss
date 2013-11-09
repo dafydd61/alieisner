@@ -1,0 +1,87 @@
+.page-template-landing-php {
+	#page {
+		max-width: 960px;
+	}
+	.site-content {
+		background: transparent;
+	}
+	.media {
+		background: url(img/bolt-lg.png) 2rem center no-repeat;
+		background-size: 20rem auto;
+		@media screen and (max-width: 700px) {
+			background: none;
+		}
+		.entry-content {
+			margin-top: 0;
+		}
+		.media__content {
+			width: auto;
+			margin-left: 24rem;
+			float: none;
+			@media screen and (max-width: 700px) {
+				margin-left: 0;
+			}
+		}
+		h1 {
+			font-size: 40px;
+			font-size: 4rem;
+			margin-bottom: $vspacing/3;
+			color: $darkseablue;
+			text-shadow: darken($darkseablue, 20%);
+			@media screen and (max-width: 700px) {
+				font-size: 30px;
+				font-size: 3rem;
+			}
+		}
+		p {
+			margin-bottom: $vspacing/1.5;
+			@media screen and (max-width: 700px) {
+				font-size: 20px;
+				font-size: 2rem;
+			}
+		}
+
+	}
+
+	.contact-form {
+		input[type="email"],
+		input[type="submit"] {
+			float: left;
+			height: 44px;
+		}
+		input[type="email"] {
+			// border-width: 1px 0 1px 1px;
+			webkit-appearance: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			background-image: none;
+		}
+		input[type="submit"] {
+			color: $yellow;
+			background: $darkseablue;
+			&:hover {
+				background: darken($darkseablue, 10%);
+			}
+		}
+		h3 {
+			color: $darkseablue;
+			text-transform: none;
+			font-weight: normal;
+			text-shadow: darken($darkseablue, 20%);
+		}
+		a {
+			display: inline-block;
+			color: $yellow;
+			background: $darkseablue;
+			text-shadow: none;
+			font-size: 14px;
+			font-size: 1.4rem;
+			padding: .3em 1em;
+			text-transform: uppercase;
+			font-weight: bold;
+			&:hover {
+				background: darken($darkseablue, 10%);
+			}
+		}
+	}
+}

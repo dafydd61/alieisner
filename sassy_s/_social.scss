@@ -1,0 +1,14 @@
+.social {
+	font-size: 32px;
+	font-size: 3.2rem;
+	text-align: center;
+	margin: 0;
+	li {
+		display: inline-block;
+		padding: 0 .5rem;
+		@media screen and (max-width: 875px) {
+			
+
+		}
+	}
+}

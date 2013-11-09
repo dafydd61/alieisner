@@ -1,0 +1,31 @@
+/* =Content
+----------------------------------------------- */
+
+.sticky {
+}
+.hentry {
+	// margin: 0 0 $vspacing;
+	padding: 2rem;
+	background: hsla(0, 0, 70%, .2);
+	&:nth-child(2n-1) {
+		background: hsla(0, 0, 100%, .3);
+	}
+}
+.byline,
+.updated {
+	display: none;
+}
+.single, .group-blog {
+	.byline {
+		display: inline;
+	}
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: $vspacing 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 $vspacing;
+}
