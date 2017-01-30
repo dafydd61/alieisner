@@ -8,6 +8,8 @@
  */
 ?>
 
+  <?php // get_sidebar('home-above-footer') ?>
+
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
@@ -15,7 +17,6 @@
 			<?php do_action( 'ali_credits' ); ?>
 			<span>Ali J. Eisner</span>
       <span>Design and code by <a target="_blank" href="http://fancydavid.com">Dafydd Hughes</a>, built on <a target="_blank" href="http://underscores.me/" rel="designer">Underscores.me</a></span>
-      <span>Radio tower by <a target="_blank" href="http://michaeljohnroberts.com/">Mike Roberts</a></span>
       <span>Ali map photo by <a target="_blank" href="http://jenniferrowsom.com//">Jennifer Rowsom</a></span>
 		</div><!-- .site-info -->
     <?php get_template_part('social'); ?>

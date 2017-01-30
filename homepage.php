@@ -11,7 +11,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				
+
 				<div class="hero">
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('media media--img-right'); ?>>
@@ -34,9 +34,9 @@ get_header(); ?>
 						<div class="media__media">
 							<?php
 							if ( has_post_thumbnail() ) {
-								the_post_thumbnail('full');
-							}
-							?>
+                $img_href = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+                <a class="image-popup-no-margins" href="<?php echo $img_href ?>"><?php the_post_thumbnail('homepage-square') ?></a>
+							<?php } ?>
 							<?php get_template_part('social'); ?>
 						</div>
 					</article><!-- #post-## -->
@@ -67,11 +67,12 @@ get_header(); ?>
 
 						<div class="entry-content">
 							<?php the_excerpt(); ?>
-							<p><a class="read-blog-link" href="#">Read the blog</a></p>
+							<?php $blogID = get_page_by_path('blog'); ?>
+							<p><a class="read-blog-link" href="<?php echo get_page_link($blogID) ?>">Read the blog</a></p>
 						</div><!-- .entry-content -->
 
 				</article><!-- #post-## -->
-			<?php endforeach; 
+			<?php endforeach;
 			wp_reset_postdata(); ?>
 
 		</main><!-- #main -->

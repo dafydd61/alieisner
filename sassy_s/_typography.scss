@@ -158,7 +158,7 @@ html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	// background: rgba($base-color, .8);
-	background: darken($darkseablue, 10%);	
+	background: darken($darkseablue, 10%);
 }
 button:focus,
 html input[type="button"]:focus,
@@ -247,6 +247,6 @@ a {
 	@include hoverActiveFocus(color, lighten($link-color, 10%));
 }
 a:visited {
-	color: $steelblue;
-	color: $link-color;
+	// color: $steelblue;
+	// color: $link-color;
 }

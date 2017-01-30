@@ -23,11 +23,16 @@ body {
 
 #site-navigation {
 	font-family: "brandon-grotesque";
-	background: rgba($base-color, .9);
+	// background: rgba($base-color, .9);
+	// background: lighten(desaturate($base-color, 20%), 5%);
+	background: rgb(26, 52, 63);
 	letter-spacing: .2em;
 	@include clearfix();
-
+	font-size: .875em;
 	.nav-menu {
+		@media screen and (max-width: 1200px) {
+			font-size: .875em;
+		}
 		li {
 			display: block;
 			float: left;
@@ -37,7 +42,9 @@ body {
 			}
 			a {
 				display: block;
-				padding: 1.5em 2rem;
+				padding: 0 2rem;
+				height: 4.5em;
+				line-height: 4.5em;
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: bold;
@@ -48,42 +55,48 @@ body {
 				transition: all .5s;
 				-webkit-transition: all .5s;
 				@media screen and (max-width: 1200px) {
-					padding: 1.5em 2rem;
-					font-size: .875em;
+					padding: 0 2rem;
+					// font-size: .875em;
 				}
 				@media screen and (max-width: 1060px) {
-					padding: 1.5em 1rem;
+					padding: 0 1rem;
 				}
 				@media screen and (max-width: 880px) {
 					padding: 1em 1rem;
-					font-size: .8em;
+					// font-size: .8em;
 				}
 				// @media screen and (max-width: 785px) {
 				@media screen and (max-width: 880px) {
 					padding: 1em 2rem 1em 4rem;
-					font-size: .8em;
+					height: auto;
+					line-height: 1;
+					// font-size: .8em;
 				}
 			}
-			&:hover a,
-			&.current-menu-item a {
+			a:hover,
+			&.current-menu-item > a {
 				color: hsla(0, 0, 100%, .8);
 				background: hsla(0, 0, 100%, .05);
 				text-shadow: none;
 			}
-			&.current-menu-item a {
-				background: hsla(0, 0, 100%, .05) url(img/bolt-menu.png) no-repeat center center;
-				background-size: auto 70%;
-				text-shadow: 0 0 2px rgba(0, 0, 0, 1);
-				// @media screen and (max-width: 785px) {
-				@media screen and (max-width: 880px) {
+			@media screen and (min-width: 881px) {
+				&.current-menu-item > a {
+					background: hsla(0, 0, 100%, .05) url(img/bolt-menu.png) no-repeat center center;
+					background-size: auto 70%;
+					text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+					// @media screen and (max-width: 785px) {
+				}
+			}
+			@media screen and (max-width: 880px) {
+				&.current-menu-item > a {
 					background: hsla(0, 0, 100%, .05) url(img/bolt-menu-full.png) no-repeat 1rem center;
 					background-size: auto 50%;
 				}
 			}
-			&:first-child a {
-				@media screen and (max-width: 950px) and (min-width: 786px) {
-					padding-left: 2rem;
-				}
+		}
+		> li:first-child > a {
+			@media screen and (max-width: 950px) and (min-width: 880px) {
+				padding-left: 2rem;
 			}
 		}
 		.menu-item:nth-child(1) a {
@@ -120,6 +133,67 @@ body {
 		.menu-item:nth-child(9) a {
 			// color: $bright-orange;
 			color: $ali-turquoise;
+		}
+		@media screen and (max-width: 880px) {
+			.dropdown-trigger {
+				& > a:after {
+					content: $fa-var-caret-right;
+					margin-left: .3em;
+				  display: inline-block;
+				  font-family: FontAwesome;
+				  font-style: normal;
+				  font-weight: normal;
+				  line-height: 1;
+				  -webkit-font-smoothing: antialiased;
+				  -moz-osx-font-smoothing: grayscale;
+			 	}
+			 	&.open > a:after {
+					content: $fa-var-caret-down;
+			 	}
+			 	&.open ul.sub-menu {
+			 		display: block;
+			 	}
+			}
+		}
+	}
+	.nav-menu ul {
+		box-shadow: none;
+		// background: lighten(desaturate($base-color, 20%), 5%);
+		background: rgb(26, 52, 63);
+
+		top: 4.5em;
+		li {
+			width: 100%;
+			// border-top: 1px solid rgba(lighten($base-color, 20%), .2);
+		}
+		li a {
+			width: auto;
+			white-space: nowrap;
+			height: 3em;
+			line-height: 3em;
+			min-width: 12em;
+			// display: block;
+		}
+		li.current-menu-item > a {
+			// background-image: none;
+			// background-position-x: 1em;
+			// padding-left: 3em;
+		}
+		@media screen and (max-width: 880px) {
+			display: none;
+			position: relative;
+			top: 0;
+			float: none;
+			width: 100%;
+			li {
+				border-top: none;
+			}
+			li a {
+				padding-left: 4em;
+				display: block;
+				width: 100%;
+				line-height: 1;
+			}
 		}
 	}
 	> h1 {
@@ -189,4 +263,14 @@ body {
 			color: rgba(255, 255, 255, .8);
 		}
 	}
+}
+
+.paging-navigation {
+	clear: both;
+	float: none;
+	@include clearfix();
+}
+
+.form-allowed-tags {
+	display: none;
 }

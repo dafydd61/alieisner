@@ -5,3 +5,79 @@
 .attachment-timeline-thumb.wp-post-image {
 	width: 100% !important;
 }
+
+#FbridgeSGWidget {
+  padding: 20px 20px 0;
+  padding: 2rem 2rem 0;
+  margin-bottom: 0 !important;
+  background: hsla(0, 0, 30%, .1) !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  h2 {
+    text-transform: uppercase !important;
+    font-size: 20px !important;
+    font-size: 2rem !important;
+    color: $darkseablue !important;
+    text-shadow: darken($darkseablue, 20%) !important;
+  }
+  input[type="text"] {
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    padding: 0px 8px 0px 8px !important;
+    // margin-bottom: 13px !important;
+    width: 100% !important;
+    max-width: 20em !important;
+    height: 35px !important;
+    vertical-align: bottom !important;
+    font-family: inherit !important;
+    background-color: #fff !important;
+
+    color: $base-color !important;
+    border: 1px solid #ccc !important;
+    font-size: 16px !important;
+    font-size: 1.6rem !important;
+    -webkit-appearance: none;
+
+  }
+
+  input[type="submit"] {
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: "brandon-grotesque" !important;
+    text-transform: uppercase !important;
+    // background: rgba($base-color, .9) !important;
+    background: $buttondarkseablue !important;
+    color: $yellow !important;
+    cursor: pointer !important; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+    -webkit-appearance: button !important; /* Corrects inability to style clickable 'input' types in iOS */
+    font-size: 14px !important;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    // line-height: 1 !important;
+    // padding: .7em 1.2em .6em !important;
+    padding-left: 1.2em !important;
+    padding-right: 1.2em !important;
+    text-shadow: none !important;
+    transition: all .5s !important;
+    -webkit-transition: all .5s !important;
+    opacity: 1 !important;
+    width: auto !important;
+  }
+  input[type="submit"]:hover {
+    // background: rgba($base-color, .8) !important;
+    background: darken($darkseablue, 10%) !important;
+    opacity: 1 !important;
+
+  }
+
+label {
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    height: 2em !important;
+}
+
+
+}

@@ -16,8 +16,11 @@ function ali_content_nav( $nav_id ) {
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
-		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
-		$next = get_adjacent_post( false, '', false );
+    $catsToExclude = get_cat_ID( 'video' );
+    $catsToExclude .= ", " . get_cat_ID( 'tv' );
+    $catsToExclude .= ", " . get_cat_ID( 'music' );
+		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, $catsToExclude, true );
+		$next = get_adjacent_post( false, $catsToExclude, false );
 
 		if ( ! $next && ! $previous )
 			return;

@@ -12,47 +12,50 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+<?php
 
-			<header class="page-header">
-				<h1 class="page-title"><?php single_cat_title(); ?></h1>
+$idObj = get_category_by_slug('tv');
+$id = $idObj->term_id;
+$args = array( 'posts_per_page' => -1, 'category' => $id );
+$tv = get_posts( $args );
+?>
+
+<header class="page-header">
+	<h1 class="page-title"><?php single_cat_title(); ?></h1>
+	<?php
+		// Show an optional term description.
+		$term_description = term_description();
+		if ( ! empty( $term_description ) ) :
+			printf( '<div class="taxonomy-description">%s</div>', $term_description );
+		endif;
+	?>
+</header><!-- .page-header -->
+
+<?php foreach ( $tv as $post ) : setup_postdata( $post ); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('cat-tv'); ?>>
+		<a class="reveal-trigger reveal-trigger-append" data-target="#content-<?php the_ID(); ?>" href="#content-<?php the_ID(); ?>">
+			<header class="entry-header--tv">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content--tv">
+				<?php the_post_thumbnail(); ?>
 				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'ali' ),
+						'after'  => '</div>',
+					) );
 				?>
-			</header><!-- .page-header -->
+			</div><!-- .entry-content -->
+		</a>
+	</article><!-- #post-## -->
+	<div class="entry-content--tv__description mfp-hide" id="content-<?php the_ID(); ?>">
+		<h1 class="popup-title"><?php the_title(); ?></h1>
+		<?php the_content(); ?>
+	</div>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'ali' ) ); ?>
-						<?php
-							wp_link_pages( array(
-								'before' => '<div class="page-links">' . __( 'Pages:', 'ali' ),
-								'after'  => '</div>',
-							) );
-						?>
-					</div><!-- .entry-content -->
-
-				</article><!-- #post-## -->
-			<?php endwhile; ?>
-
-			<?php ali_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'archive' ); ?>
-
-		<?php endif; ?>
+<?php endforeach;
+wp_reset_postdata();?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

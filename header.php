@@ -24,15 +24,38 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
+	<?php
+	types_render_field("slider-image");
+	?>
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo( 'stylesheet_directory' ) ?>/img/ali_Logo_tower.png" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+		<?php
+		if ( is_home() && !(is_front_page()) ) {
+			$blogObj = get_page_by_path('blog');
+			$blogId = $blogObj->ID;
+			$useCarousel = types_render_field("no-carousel", array("id"=>$blogId));
+			$slides = types_render_field("slider-image", array("separator"=>"</div><div>", "id"=>$blogId));
+		} else {
+			$useCarousel = types_render_field("no-carousel");
+			$slides = types_render_field("slider-image", array("separator"=>"</div><div>"));
+		}
+		?>
+		<?php
+		if (!empty($slides) && $useCarousel != 1) {
+		?>
+		<div class="banner-pics banner-slick">
+			<div class="slick-slide">
+				<?php
+				echo $slides;
+				?>
+			</div>
 		</div>
-
+		<?php
+		}
+		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 
-			<h1 class="menu-toggle">Ali Eisner <span class="icon-reorder"></span></h1>
+			<h1 class="menu-toggle">Ali Eisner <span class="fa fa-bars"></span></h1>
 
 			<div class="screen-reader-text skip-link"><a href="#content"><?php _e( 'Skip to content', 'ali' ); ?></a></div>
 

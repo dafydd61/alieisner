@@ -1,7 +1,7 @@
 .media {
 	@include clearfix;
 	.media__media {
-		width: 30%;
+		width: 40%;
 		float: left;
 		padding: 1rem;
 		@media screen and (max-width: 600px) {
@@ -11,7 +11,7 @@
 		}
 	}
 	.media__content {
-		width: 70%;
+		width: 60%;
 		float: right;
 		// padding: 1rem;
 		@media screen and (max-width: 600px) {
@@ -25,6 +25,6 @@
 		}
 		.media__content {
 			float: left;
-		}		
+		}
 	}
 }
